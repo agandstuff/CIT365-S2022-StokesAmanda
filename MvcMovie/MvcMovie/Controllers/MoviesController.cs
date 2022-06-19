@@ -148,17 +148,6 @@ namespace MvcMovie.Controllers
             {
                 try
                 {
-                    string wwwRootPath = _hostEnvironment.WebRootPath;
-                    string filename = Path.GetFileNameWithoutExtension(movie.ImageFile.FileName);
-                    string extension = Path.GetExtension(movie.ImageFile.FileName);
-                    movie.ImageName = filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
-                    string path = Path.Combine(wwwRootPath + "/Images/", filename);
-
-                    using (var filestream = new FileStream(path, FileMode.Create))
-                    {
-                        await movie.ImageFile.CopyToAsync(filestream);
-                    }
-
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }

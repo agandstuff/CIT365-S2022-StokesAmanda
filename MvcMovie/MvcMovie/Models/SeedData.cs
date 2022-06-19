@@ -45,7 +45,7 @@ namespace MvcMovie.Models
                         Genre = "Drama",
                         Price = 9.99M,
                         Rating = "PG",
-                        ImageName = "workandtheglory.jpeg"
+                        ImageName = "workandtheglory.jpg"
                     },
 
                     new Movie
